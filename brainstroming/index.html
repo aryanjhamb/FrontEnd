@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Tracker Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <!-- User Profile Section for CodeStudio API Demo -->
+    <!-- <div id="userProfileDemo" style="background:#f0f4ff;padding:16px 24px;margin:16px auto 0 auto;max-width:400px;border-radius:12px;box-shadow:0 2px 8px #0001;display:flex;align-items:center;gap:16px;">
+        <img id="userAvatar" src="" alt="User Avatar" style="width:64px;height:64px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 1px 4px #0001;">
+        <div style="flex:1;">
+            <div><b>Name:</b> <span id="userName">-</span></div>
+            <div><b>Email:</b> <span id="userEmail">-</span></div>
+            <div><b>Username:</b> <span id="userUsername">-</span></div>
+            <div><b>Questions Solved:</b> <span id="userSolved">-</span></div>
+            <div id="errorMsg" style="color:#e11d48;font-size:13px;margin-top:4px;"></div>
+        </div>
+    </div> -->
+    <!-- End User Profile Section -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <span class="logo-text">
+                    <span style="display: inline-block; transform-origin: center;">D</span>
+                    <span style="display: inline-block; transform-origin: center;">S</span>
+                    <span style="display: inline-block; transform-origin: center;">A</span>
+                    <span style="display: inline-block; transform-origin: center;">&nbsp;</span>
+                    <span style="display: inline-block; transform-origin: center;">T</span>
+                    <span style="display: inline-block; transform-origin: center;">r</span>
+                    <span style="display: inline-block; transform-origin: center;">a</span>
+                    <span style="display: inline-block; transform-origin: center;">c</span>
+                    <span style="display: inline-block; transform-origin: center;">k</span>
+                    <span style="display: inline-block; transform-origin: center;">e</span>
+                    <span style="display: inline-block; transform-origin: center;">r</span>
+                </span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>DSA Topics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-target"></i>
+                    <span>Striver 450</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Practice Plan</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Community</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-wrapper">
+                <!-- Welcome Header -->
+                <div class="welcome-header">
+                    <div class="welcome-text">
+                        <h1>Hi <span id="aryan-name" style="color:#ffb86c; cursor:pointer; text-decoration:underline;">Aryan</span>! Welcome back to your coding journey. 👋</h1>
+                        <p>Great job—keep the momentum going!</p>
+                        
+                        <div class="progress-indicators">
+                            <div class="indicator">
+                                <div class="indicator-dot green"></div>
+                                <span>4 problems solved today</span>
+                            </div>
+                            <div class="indicator">
+                                <i class="fas fa-fire orange"></i>
+                                <span>12 day streak</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Daily Streak Widget -->
+                    <div class="streak-widget">
+                        <div class="streak-content">
+                            <i class="fas fa-fire streak-icon"></i>
+                            <div class="streak-info">
+                                <div class="streak-number">12 Days</div>
+                                <div class="streak-label">Current Streak</div>
+                            </div>
+                        </div>
+                        <div class="streak-message">🔥 You're on fire! Keep it up!</div>
+                    </div>
+                </div>
+
+                <!-- Top Row: Striver 450 and Total Questions -->
+                <div class="top-cards">
+                    <!-- Striver Progress Card -->
+                    <div class="card striver-card">
+                        <div class="card-header">
+                            <h3>📘 Striver's 450 DSA Sheet</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="striver-progress">
+                                <div class="circular-progress">
+                                    <svg class="progress-ring" width="80" height="80">
+                                        <circle class="progress-ring-bg" cx="40" cy="40" r="36"></circle>
+                                        <circle class="progress-ring-fill" cx="40" cy="40" r="36" style="--progress: 41.6"></circle>
+                                    </svg>
+                                    <div class="progress-text">22.6%</div>
+                                </div>
+                                
+                                <div class="progress-numbers">
+                                    <div class="completed-number">102</div>
+                                    <div class="total-text">out of 450</div>
+                                    <div class="problems-text">problems completed</div>
+                                </div>
+                            </div>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 22.6%"></div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn-primary">
+                                    <i class="fas fa-book-open"></i>
+                                    Continue Striver 450
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+
+                            <div class="tip-text">💡 Focus on Arrays and Strings next - you're making great progress!</div>
+                        </div>
+                    </div>
+
+                    <!-- Total Questions Card -->
+                    <div class="card total-card">
+                        <div class="card-header">
+                            <h3>✅ Total Questions Completed</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="total-header">
+                                <div class="total-info">
+                                    <div class="total-number">625</div>
+                                    <div class="total-message">You've solved 625 problems!</div>
+                                    <div class="total-subtitle">Across all platforms</div>
+                                </div>
+                                <div class="achievement-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                            </div>
+
+                            <!-- Sparkline -->
+                            <div class="sparkline-section">
+                                <div class="sparkline-header">
+                                    <i class="fas fa-trending-up"></i>
+                                    <span>Recent Progress</span>
+                                </div>
+                                <div class="sparkline">
+                                    <div class="bar" style="height: 50%"></div>
+                                    <div class="bar" style="height: 75%"></div>
+                                    <div class="bar" style="height: 37.5%"></div>
+                                    <div class="bar" style="height: 93.75%"></div>
+                                    <div class="bar" style="height: 56.25%"></div>
+                                    <div class="bar" style="height: 68.75%"></div>
+                                    <div class="bar" style="height: 87.5%"></div>
+                                    <div class="bar" style="height: 43.75%"></div>
+                                    <div class="bar" style="height: 81.25%"></div>
+                                    <div class="bar" style="height: 62.5%"></div>
+                                    <div class="bar" style="height: 100%"></div>
+                                    <div class="bar" style="height: 75%"></div>
+                                </div>
+                                <div class="sparkline-label">Last 12 days activity</div>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number">156</div>
+                                    <div class="stat-label">This month</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">42</div>
+                                    <div class="stat-label">This week</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Progress Chart -->
+                <div class="card chart-card">
+                    <div class="card-header">
+                        <h3>📈 Monthly Progress</h3>
+                        <p>Problems solved vs monthly goal • 60% goal reached</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="chart-container">
+                            <div class="chart">
+                                <div class="chart-grid">
+                                    <div class="grid-line" style="bottom: 0%"></div>
+                                    <div class="grid-line" style="bottom: 25%"></div>
+                                    <div class="grid-line" style="bottom: 50%"></div>
+                                    <div class="grid-line" style="bottom: 75%"></div>
+                                    <div class="grid-line" style="bottom: 100%"></div>
+                                </div>
+                                
+                                <div class="chart-line">
+                                    <div class="line-point" style="left: 12.5%; bottom: 70%" data-tooltip="Week 1: 28 solved, 30 goal (93%)"></div>
+                                    <div class="line-point" style="left: 37.5%; bottom: 87.5%" data-tooltip="Week 2: 35 solved, 30 goal (117%)"></div>
+                                    <div class="line-point" style="left: 62.5%; bottom: 80%" data-tooltip="Week 3: 32 solved, 30 goal (107%)"></div>
+                                    <div class="line-point" style="left: 87.5%; bottom: 95%" data-tooltip="Week 4: 38 solved, 30 goal (127%)"></div>
+                                </div>
+                                
+                                <div class="chart-labels">
+                                    <span>Week 1</span>
+                                    <span>Week 2</span>
+                                    <span>Week 3</span>
+                                    <span>Week 4</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-footer">
+                            <div class="chart-status">🎯 You're 10% ahead of your monthly goal</div>
+                            <div class="chart-summary">133/120 problems this month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platform Breakdown -->
+                <div class="card platforms-card">
+                    <div class="card-header">
+                        <h3>🌐 Platform-wise Problem Breakdown</h3>
+                        <p>Your progress across different coding platforms • 830 total problems solved</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="platforms-grid">
+                            <!-- LeetCode -->
+                            <div class="platform-card orange">
+                                <div class="platform-header">
+                                    <div class="platform-info">
+                                        <span class="platform-logo">🟠</span>
+                                        <div>
+                                            <div class="platform-name">LeetCode</div>
+                                            <div class="platform-handle">@aryan_codes</div>
+                                        </div>
+                                    </div>
+                                    <button class="platform-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="platform-stats">
+                                    <div class="platform-numbers">
+                                        <span class="solved-count">420</span>
+                                        <span class="total-count">/3000</span>
+                                    </div>
+                                    <div class="platform-progress">
+                                        <div class="progress-fill" style="width: 14%"></div>
+                                    </div>
+                                </div>
+                                <div class="platform-footer">
+                                    <span class="completion-rate">14% completed</span>
+                                    <div class="active-badge">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Active</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GeeksforGeeks -->
+                            <div class="platform-card green">
+                                <div class="platform-header">
+                                    <div class="platform-info">
+                                        <span class="platform-logo">🟢</span>
+                                        <div>
+                                            <div class="platform-name">GeeksforGeeks</div>
+                                            <div class="platform-handle">@aryanjhazzgz</div>
+                                        </div>
+                                    </div>
+                                    <button class="platform-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="platform-stats">
+                                    <div class="platform-numbers">
+                                        <span class="solved-count">180</span>
+                                        <span class="total-count">/1500</span>
+                                    </div>
+                                    <div class="platform-progress">
+                                        <div class="progress-fill" style="width: 12%"></div>
+                                    </div>
+                                </div>
+                                <div class="platform-footer">
+                                    <span class="completion-rate">12% completed</span>
+                                    <div class="active-badge">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="platform-card brown">
+                                <div class="platform-header">
+                                    <div class="platform-info">
+                                        <span class="platform-logo">🍳</span>
+                                        <span style="margin-left:6px; display:inline-block;">
+                                            <span class="platform-name" id="cc-name">CodeChef</span>
+                                            <span class="platform-handle" id="cc-handle" style="margin-left:4px;">@aryanjhamb1703</span>
+                                        </span>
+                                        <img id="cc-profile-img" src="" alt="CodeChef profile" style="width:48px;height:48px;border-radius:50%;margin-left:12px;display:none;vertical-align:middle;" />
+                                    </div>
+                                    <a class="platform-link" href="https://www.codechef.com/users/aryanjhamb1703" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="platform-stats" style="margin-top:8px;">
+                                    <div id="cc-name-row" style="font-size:14px;font-weight:600;"></div>
+                                    <div id="cc-rating-row" style="font-size:13px;"></div>
+                                    <div id="cc-highest-rating-row" style="font-size:13px;"></div>
+                                    <div id="cc-stars-row" style="font-size:13px;"></div>
+                                    <div id="cc-country-row" style="font-size:13px;display:flex;align-items:center;"></div>
+                                    <div id="cc-global-rank-row" style="font-size:13px;"></div>
+                                    <div id="cc-country-rank-row" style="font-size:13px;"></div>
+                                </div>
+                                <div class="platform-footer">
+                                    <span class="completion-rate"></span>
+                                    <div class="active-badge">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Active</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                         
+
+                            <!-- Codeforces -->
+                            <div class="platform-card red">
+                                <div class="platform-header">
+                                    <div class="platform-info">
+                                        <span class="platform-logo">🔴</span>
+                                        <div>
+                                            <div class="platform-name">Codeforces</div>
+                                            <div class="platform-handle">@aryan_cf</div>
+                                        </div>
+                                    </div>
+                                    <button class="platform-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="platform-stats">
+                                    <div class="platform-numbers">
+                                        <span class="solved-count">45</span>
+                                        <span class="total-count">/1000</span>
+                                    </div>
+                                    <div class="platform-progress">
+                                        <div class="progress-fill" style="width: 5%"></div>
+                                    </div>
+                                </div>
+                                <div class="platform-footer">
+                                    <span class="completion-rate">5% completed</span>
+                                </div>
+                            </div>
+                            <div class="platform-card yellow">
+                                <div class="platform-header">
+                                    <div class="platform-info">
+                                        <span class="platform-logo">🟡</span>
+                                        <span style="margin-left:6px; display:inline-block;">
+                                            <span class="platform-name" id="hr-platform-name">HackerRank</span>
+                                            <span class="platform-handle" id="hr-platform-handle" style="margin-left:4px;">@aryanjhamb1703</span>
+                                        </span>
+                                        <img src="https://hackerrank-badges.vercel.app/aryanjhamb1703" alt="HackerRank badges" style="width:100%;max-width:300px;margin-top:8px; display:block;" />
+                                    </div>
+                                    <a class="platform-link" href="https://www.hackerrank.com/aryanjhamb1703" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="platform-stats">
+                                    <!-- Solved and total count removed -->
+                                </div>
+                                <div class="platform-footer">
+                                    <span class="completion-rate" id="hr-completion-rate">13% completed</span>
+                                    <div class="active-badge">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CodeChef -->
+                          
+
+                            <!-- Codelio -->
+                           
+                        <!-- Cross-Platform Achievement -->
+                        <div class="achievement-banner">
+                            <div class="achievement-content">
+                                <div class="achievement-text">
+                                    <div class="achievement-title">Cross-Platform Achievement</div>
+                                    <div class="achievement-desc">You've solved problems on 6 different platforms!</div>
+                                </div>
+                                <div class="achievement-number">30</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Modal for animated photo -->
+    <div id="photo-modal" class="photo-modal">
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="modal-img" />
+    </div>
+    <!-- Modal for CodeChef card -->
+    <div id="codechef-modal" class="card-modal">
+      <span class="close-card-modal">&times;</span>
+      <div class="codolio-card" id="codechef-card-content">
+        <div style="color:#fff;text-align:center;">Loading...</div>
+      </div>
+    </div>
+</body>
+</html>
