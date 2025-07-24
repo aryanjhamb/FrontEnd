@@ -1,8 +1,5 @@
 <div align="center">
 
-![Uploading profileCard (1).png…]()
-
-
 # 🧠 DSA Progress Tracker 📈
 
 Track your journey through Data Structures and Algorithms with ease and clarity. Whether you're preparing for interviews or brushing up on concepts, this tool helps you **monitor your daily consistency**, **problem count**, and **platform stats** in one place.
