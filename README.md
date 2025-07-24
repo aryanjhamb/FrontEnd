@@ -1,6 +1,7 @@
 <div align="center">
 
-<img src="https://github.com/yourusername/DSA-Progress-Tracker/assets/yourimagepath/profileCard.png" width="250px" alt="Aryan Jhamb - Codolio Card"/>
+![Uploading profileCard (1).png…]()
+
 
 # 🧠 DSA Progress Tracker 📈
 
